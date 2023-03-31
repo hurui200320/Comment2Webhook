@@ -111,7 +111,7 @@ class Comment2Webhook_Plugin implements Typecho_Plugin_Interface
 		// copy the comment
 		$result = array();
         self::copyComment($result, $comment, "current_");
-        if(isset($comment->parent)) {
+        if($comment->parent) {
             $p = self::widgetById('comments', $comment->parent);
             $parentComment = self::copyComment($result, $p, "parent_");
         }
